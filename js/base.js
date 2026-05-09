@@ -1,4 +1,15 @@
 server_url="https://maqsood.pythonanywhere.com/records/"
+function setAutoWallpaper() {
+  // Adding a timestamp prevents the browser from caching the same image
+  const randomUrl = `https://unsplash.com{Math.random()}`;
+  
+  document.body.style.backgroundImage = `url('${randomUrl}')`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundAttachment = "fixed";
+}
+
+window.onload = setAutoWallpaper;
+
 function addTask(){
 	let taskName=document.getElementById('data').value
 	let pin=document.getElementById('pin').value
